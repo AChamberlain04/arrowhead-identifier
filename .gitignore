@@ -1,3 +1,4 @@
-node_modules
-.envpublic/uploads/*
-!public/uploads/.gitkeep
+echo "node_modules
+.env
+public/uploads/*
+!public/uploads/.gitkeep" > .gitignore
