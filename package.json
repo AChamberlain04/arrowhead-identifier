@@ -1,0 +1,33 @@
+{
+  "name": "rap-name-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "bcrypt": "^6.0.0",
+    "cloudinary": "^2.10.0",
+    "connect-flash": "^0.1.1",
+    "connect-mongo": "^6.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.4.2",
+    "ejs": "^5.0.2",
+    "express": "^4.17.1",
+    "express-flash": "^0.0.2",
+    "express-session": "^1.19.0",
+    "flash": "^1.1.0",
+    "mongodb": "^7.1.1",
+    "morgan": "^1.10.1",
+    "multer": "^2.1.1",
+    "passport": "^0.7.0",
+    "passport-local": "^1.0.0",
+    "session": "^0.1.0",
+    "tailwindcss": "^4.3.3",
+    "validator": "^13.15.35"
+  }
+}

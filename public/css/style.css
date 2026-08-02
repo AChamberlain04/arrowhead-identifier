@@ -1,0 +1,90 @@
+h1{
+    color: brown;
+}
+
+body{
+    background-color: tan;
+    text-align: center;
+}
+
+li{
+    list-style: none;
+}
+
+
+
+/* Card container */
+.login-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: grab;
+}
+
+.login-container:active {
+    cursor: grabbing;
+}
+
+/* Form box */
+.login-form {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* Title */
+.login-form h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Labels */
+.login-form label {
+  display: block;
+  margin: 10px 0 5px;
+  font-size: 14px;
+}
+
+/* Inputs */
+.login-form input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  outline: none;
+}
+
+.login-form input:focus {
+  border-color: #3b82f6;
+}
+
+/* Button */
+.login-form button {
+  width: 100%;
+  padding: 10px;
+  background: #3b82f6;
+  border: none;
+  color: white;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.login-form button:hover {
+  background: #2563eb;
+}
+
+/* Footer text */
+.footer-text {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.footer-text a {
+  color: #3b82f6;
+  text-decoration: none;
+}

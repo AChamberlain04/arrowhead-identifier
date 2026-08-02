@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/css/style.css">
+  <title>Artifact Result</title>
+</head>
+<body>
+
+  <h1>Artifact Uploaded</h1>
+
+  <img
+    src="/uploads/<%= artifact.image %>"
+    width="300"
+  >
+
+  <p>State: <%= artifact.state %></p>
+
+  <p>
+    Estimated Length:
+    <%= artifact.estimatedLength %> inches
+  </p>
+
+  <h2>Possible Matches</h2>
+
+<% if(matches.length === 0) { %>
+
+  <p>No matches found.</p>
+
+<% } %>
+
+<% matches.forEach(match => { %>
+
+  <div>
+
+    <h3><%= match.name %></h3>
+
+    <p>
+      Culture:
+      <%= match.culture %>
+    </p>
+
+    <p>
+      Age:
+      <%= match.ageRange %>
+    </p>
+
+    <p>
+      <%= match.description %>
+    </p>
+
+  </div>
+
+<% }) %>
+
+</body>
+</html>

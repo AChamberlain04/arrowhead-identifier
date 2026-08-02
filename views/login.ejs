@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <title>ArtifactID</title>
+
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1> The Artifact ID - Identify Your Artifacts! </h1>
+
+    <% messages = typeof messages !== 'undefined' ? messages : {} %>
+<% if (messages && messages.errors) { %>
+    <% messages.errors.forEach(el => { %>
+        <div class="alert alert-danger">
+            <%= el.msg %>
+        </div>
+    <% }) %>
+<% } %>
+
+<% if (messages && messages.info) { %>
+    <% messages.info.forEach(el => { %>
+        <div class="alert alert-info">
+            <%= el.msg %>
+        </div>
+    <% }) %>
+<% } %>
+    <!-- <form action="/login" method="POST">
+        <input type="email" name="email" placeholder="Email">
+        <input type="password" name="password" placeholder="Password">
+        <input type="submit">
+    </form> -->
+
+    <div class="login-container" id="dragBox">
+  <form class="login-form" action="/login" method="POST">
+    <h2>Login</h2>
+
+    <label>User Name</label>
+    <input type="name" name="name" placeholder="Enter User Name" required />
+
+    <label>Email</label>
+    <input type="email" name="email" placeholder="Enter email" required />
+
+    <label>Password</label>
+    <input type="password" name="password" placeholder="Enter password" required />
+
+    <button type="submit">Login</button>
+
+    <p class="footer-text">
+      Don't have an account? <a href="/signup">Sign up</a>
+    </p>
+  </form>
+</div>
+<!-- Makes Login Container Draggable -->
+<script>
+// const box = document.getElementById("dragBox");
+
+// let isDragging = false;
+// let offsetX = 0;
+// let offsetY = 0;
+
+// box.addEventListener("mousedown", (e) => {
+//     isDragging = true;
+
+//     offsetX = e.clientX - box.offsetLeft;
+//     offsetY = e.clientY - box.offsetTop;
+
+//     // remove centering transform when dragging starts
+//     box.style.transform = "none";
+// });
+
+// document.addEventListener("mousemove", (e) => {
+//     if (!isDragging) return;
+
+//     box.style.left = (e.clientX - offsetX) + "px";
+//     box.style.top = (e.clientY - offsetY) + "px";
+// });
+
+// document.addEventListener("mouseup", () => {
+//     isDragging = false;
+// });
+</script>
+</body>
+</html>
