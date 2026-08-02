@@ -1,9 +1,10 @@
 {
-  "name": "rap-name-api",
+  "name": "arrowhead-identifier",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -22,6 +23,7 @@
     "express-session": "^1.19.0",
     "flash": "^1.1.0",
     "mongodb": "^7.1.1",
+    "mongoose": "^9.9.1",
     "morgan": "^1.10.1",
     "multer": "^2.1.1",
     "passport": "^0.7.0",
