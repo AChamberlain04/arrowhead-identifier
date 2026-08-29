@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <link
+    rel="stylesheet"
+    href="/css/style.css"
+  >
+
+  <title>Analyzing Artifact</title>
+
+</head>
+
+<body>
+
+  <div class="result-page">
+
+    <h1>Analyzing Artifact...</h1>
+
+    <p>
+      Please wait while your artifact is being examined.
+    </p>
+
+    <img
+      src="<%= artifact.image %>"
+      alt="Uploaded artifact"
+      class="analyzing-image"
+    >
+
+    <p id="status">
+      Examining image...
+    </p>
+
+  </div>
+
+
+  <script>
+
+    const artifactId =
+      "<%= artifact._id %>";
+
+
+    const checkStatus = async () => {
+
+      try {
+
+        const response = await fetch(
+          `/artifacts/${artifactId}/status`
+        );
+
+        const data =
+          await response.json();
+
+
+        if (data.status === "complete") {
+
+          window.location.href =
+            `/artifacts/${artifactId}`;
+
+        }
+
+      } catch (error) {
+
+        console.error(
+          "Status check failed:",
+          error
+        );
+
+      }
+
+    };
+
+
+    // Check every 2 seconds
+
+    setInterval(
+      checkStatus,
+      2000
+    );
+
+  </script>
+
+</body>
+
+</html>

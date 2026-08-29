@@ -1,8 +1,24 @@
 const mongoose = require("mongoose");
 
-const ArtifactSchema = new mongoose.Schema({
-    state: String,
-    estimatedLength: Number,
-    image: String});
+const artifactSchema = new mongoose.Schema({
+  state: {
+    type: String,
+    required: true
+  },
 
-    module.exports = mongoose.model("Artifact", ArtifactSchema);
+  estimatedLength: {
+    type: Number,
+    required: true
+  },
+
+  image: {
+    type: String,
+    required: true
+  },
+
+  identification: {
+    type: String
+  }
+});
+
+module.exports = mongoose.model("Artifact", artifactSchema);

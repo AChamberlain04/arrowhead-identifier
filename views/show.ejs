@@ -1,57 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="/css/style.css">
-  <title>Artifact Result</title>
-</head>
-<body>
 
-  <h1>Artifact Uploaded</h1>
-
-  <img
-    src="/uploads/<%= artifact.image %>"
-    width="300"
+  <link
+    rel="stylesheet"
+    href="/css/style.css"
   >
 
-  <p>State: <%= artifact.state %></p>
+  <title>Artifact Result</title>
 
-  <p>
-    Estimated Length:
-    <%= artifact.estimatedLength %> inches
-  </p>
+</head>
 
-  <h2>Possible Matches</h2>
+<body>
 
-<% if(matches.length === 0) { %>
+  <div class="result-page">
 
-  <p>No matches found.</p>
+    <h1>Artifact Identification</h1>
 
-<% } %>
 
-<% matches.forEach(match => { %>
+    <div class="result-container">
 
-  <div>
 
-    <h3><%= match.name %></h3>
+      <!-- LEFT: Uploaded image -->
 
-    <p>
-      Culture:
-      <%= match.culture %>
-    </p>
+      <div class="artifact-image">
 
-    <p>
-      Age:
-      <%= match.ageRange %>
-    </p>
+        <h2>Your Artifact</h2>
 
-    <p>
-      <%= match.description %>
-    </p>
+        <img
+          src="<%= artifact.image %>"
+          alt="Uploaded artifact"
+        >
+
+        <p>
+          <strong>State:</strong>
+          <%= artifact.state %>
+        </p>
+
+        <p>
+          <strong>Estimated Length:</strong>
+          <%= artifact.estimatedLength %> inches
+        </p>
+
+      </div>
+
+
+      <!-- RIGHT: AI response -->
+
+      <div class="ai-result">
+
+        <h2>AI Identification</h2>
+
+        <div class="identification">
+
+          <pre><%= artifact.identification %></pre>
+
+        </div>
+
+      </div>
+
+
+    </div>
 
   </div>
 
-<% }) %>
-
 </body>
+
 </html>

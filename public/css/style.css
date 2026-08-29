@@ -1,4 +1,4 @@
-h1{
+ h1{
     color: brown;
 }
 
@@ -14,7 +14,7 @@ li{
 
 
 /* Card container */
-.login-container {
+/* .login-container {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -87,4 +87,128 @@ li{
 .footer-text a {
   color: #3b82f6;
   text-decoration: none;
+} 
+
+/* =========================
+   Artifact Result Page
+   ========================= */
+
+.result-page {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.result-page h1 {
+  margin-bottom: 30px;
+}
+
+.result-container {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 30px;
+  align-items: start;
+}
+
+/* Image card */
+
+.artifact-image,
+.ai-result {
+  background: #fff;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.artifact-image img {
+  width: 100%;
+  max-width: 450px;
+  height: auto;
+  display: block;
+  margin: 0 auto 20px;
+  border-radius: 8px;
+}
+
+/* AI response */
+
+.ai-result {
+  text-align: left;
+}
+
+.identification {
+  background: #f5f5f5;
+  border-radius: 8px;
+  padding: 20px;
+  overflow-x: auto;
+}
+
+.identification pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-family: inherit;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Mobile */
+
+@media (max-width: 800px) {
+
+  .result-container {
+    grid-template-columns: 1fr;
+  }
+
+  .result-page {
+    margin: 20px auto;
+    padding: 15px;
+  }
+
+}
+
+.analyzing-page {
+  max-width: 700px;
+  margin: 100px auto;
+  padding: 40px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.analyzing-page h1 {
+  margin-bottom: 20px;
+}
+
+.analyzing-page p {
+  font-size: 18px;
+}
+
+/* Loading spinner */
+.loader {
+  margin: 30px auto 10px;
+  border: 6px solid #eee;
+  border-top: 6px solid brown;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.analyzing-image {
+  width: 300px;
+  max-width: 90%;
+  height: auto;
+  border-radius: 12px;
+  margin: 20px auto;
+  display: block;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
 }
