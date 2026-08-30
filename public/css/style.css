@@ -32,6 +32,8 @@ li{
   padding: 30px;
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  width: 25%;
+  margin: 0 auto;
 }
 
 /* Title */
@@ -49,7 +51,7 @@ li{
 
 /* Inputs */
 .login-form input {
-  width: 100%;
+  width: 50%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 8px;
@@ -63,7 +65,7 @@ li{
 
 /* Button */
 .login-form button {
-  width: 100%;
+  width: 50%;
   padding: 10px;
   background: #3b82f6;
   border: none;
