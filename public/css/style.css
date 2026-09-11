@@ -1,37 +1,40 @@
- h1{
-    color: brown;
+h1 {
+  color: brown;
 }
 
-body{
-    background-color: tan;
-    text-align: center;
+body {
+  background-color: tan;
+  text-align: center;
 }
 
-li{
-    list-style: none;
+li {
+  list-style: none;
 }
 
+/* =========================
+   Login Card
+   ========================= */
 
-
-/* Card container */
-/* .login-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    cursor: grab;
+/*
+.login-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: grab;
 }
 
 .login-container:active {
-    cursor: grabbing;
+  cursor: grabbing;
 }
+*/
 
 /* Form box */
 .login-form {
   background: white;
   padding: 30px;
   border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   width: 25%;
   margin: 0 auto;
 }
@@ -57,6 +60,7 @@ li{
   border-radius: 8px;
   margin-bottom: 15px;
   outline: none;
+  box-sizing: border-box;
 }
 
 .login-form input:focus {
@@ -89,7 +93,7 @@ li{
 .footer-text a {
   color: #3b82f6;
   text-decoration: none;
-} 
+}
 
 /* =========================
    Artifact Result Page
@@ -113,7 +117,6 @@ li{
 }
 
 /* Image card */
-
 .artifact-image,
 .ai-result {
   background: #fff;
@@ -132,7 +135,6 @@ li{
 }
 
 /* AI response */
-
 .ai-result {
   text-align: left;
 }
@@ -152,20 +154,9 @@ li{
   margin: 0;
 }
 
-/* Mobile */
-
-@media (max-width: 800px) {
-
-  .result-container {
-    grid-template-columns: 1fr;
-  }
-
-  .result-page {
-    margin: 20px auto;
-    padding: 15px;
-  }
-
-}
+/* =========================
+   Analyzing Page
+   ========================= */
 
 .analyzing-page {
   max-width: 700px;
@@ -213,4 +204,28 @@ li{
   margin: 20px auto;
   display: block;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* =========================
+   Mobile
+   ========================= */
+
+@media (max-width: 800px) {
+  .result-container {
+    grid-template-columns: 1fr;
+  }
+
+  .result-page {
+    margin: 20px auto;
+    padding: 15px;
+  }
+
+  .login-form {
+    width: 80%;
+  }
+
+  .login-form input,
+  .login-form button {
+    width: 100%;
+  }
 }
