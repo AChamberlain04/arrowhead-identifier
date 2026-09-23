@@ -14,8 +14,31 @@ const Artifact = require("../models/Artifact");
 const PointType = require("../models/PointType");
 
 const upload = multer({
-  storage: multer.memoryStorage()
+  storage: multer.memoryStorage(),
+
+  limits: {
+    fileSize: 10 * 1024 * 1024
+  },
+
+  fileFilter: (req, file, cb) => {
+
+    const allowedTypes = [
+      "image/jpeg",
+      "image/png",
+      "image/webp",
+      "image/heic",
+      "image/heif"
+    ];
+
+    if (!allowedTypes.includes(file.mimetype)) {
+      return cb(new Error("Unsupported image type"), false);
+    }
+
+    cb(null, true);
+  }
 });
+
+const convert = require("heic-convert");
 
 
 // ===============================
@@ -42,16 +65,36 @@ router.post(
         });
       }
 
+      let imageBuffer = req.file.buffer;
+
+      if (
+        req.file.mimetype === "image/heic" ||
+        req.file.mimetype === "image/heif"
+      ){
+        console.log("Converting HEIC/HEIF to JPEG...");
+
+        imageBuffer = await convert ({
+          buffer: req.file.buffer,
+          format: "JPEG",
+          quality: 0.9
+        });
+
+        console.log( `HEIC conversion conplete: ${imageBuffer.length} bytes `);
+      }
+
 
       // --------------------------------
       // 1. Upload image to Cloudinary
       // --------------------------------
+      
 
       const cloudinaryResult = await new Promise((resolve, reject) => {
 
         const uploadStream = cloudinary.uploader.upload_stream(
           {
-            folder: "arrowhead-identification"
+            folder: "arrowhead-identification",
+            format: "jpg",
+            resource_type: "image"
           },
 
           (error, result) => {
@@ -66,7 +109,7 @@ router.post(
         );
 
         streamifier
-          .createReadStream(req.file.buffer)
+          .createReadStream(imageBuffer)
           .pipe(uploadStream);
 
       });
